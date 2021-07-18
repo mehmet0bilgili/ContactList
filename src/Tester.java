@@ -4,7 +4,11 @@ public class Tester {
 
     public static void main(String[] args) {
 
-        Person main = new Person(1,"Richard", "Feynman", "123456");
+        Person main = new Person(1,
+                "Richard",
+                "Feynman",
+                "123456");
+
         int id = 2;
 
         Scanner general = new Scanner(System.in);
@@ -32,19 +36,25 @@ public class Tester {
                     general.nextLine();
                 }
                 case "UPDATE" -> {
+                    boolean gate = true;
                     main.listContact();
                     System.out.println("Which user you want to update? Enter id: ");
+                    int upId = general.nextInt();
+                    general.nextLine();
                     for (Person p : main.contact) {
-                        if (p.getId() == general.nextInt()) {
-                            general.nextLine();
+                        if (p.getId() == upId) {
                             System.out.print("Enter new name: ");
                             p.setName(general.nextLine());
                             System.out.print("Enter new surname: ");
                             p.setSurname(general.nextLine());
                             System.out.print("Enter new telephone number: ");
                             p.setTelNumber(general.nextLine());
+                            gate = false;
                             break;
                         }
+                    }
+                    if (gate) {
+                        System.out.println("There is no user with this id number.");
                     }
                 }
                 case "CALL" -> {
