@@ -1,20 +1,20 @@
 import java.util.Scanner;
 
 public class Tester {
+
     public static void main(String[] args) {
-        Person p1 = new Person(1,"Mehmet", "Bilgili", "123456");
-        Person active;
-        System.out.println(p1);
+
+        Person main = new Person(1,"Mehmet", "Bilgili", "123456");
         int id = 2;
 
         Scanner general = new Scanner(System.in);
 
-        active = p1;
         boolean run = true;
+
         while (run) {
             System.out.println("LIST-ADD-DELETE-UPDATE-CALL-QUIT. Enter one of these commands.");
             switch (general.nextLine()) {
-                case "LIST" -> active.listContact();
+                case "LIST" -> main.listContact();
                 case "ADD" -> {
                     System.out.print("Enter name: ");
                     String name = general.nextLine();
@@ -22,19 +22,19 @@ public class Tester {
                     String surname = general.nextLine();
                     System.out.print("Enter telephone number: ");
                     String tel = general.nextLine();
-                    active.addPerson(new Person(id, name, surname, tel));
+                    main.addPerson(new Person(id, name, surname, tel));
                     id++;
                 }
                 case "DELETE" -> {
-                    active.listContact();
+                    main.listContact();
                     System.out.print("Which user you want to delete? Enter id: ");
-                    active.deletePerson(general.nextInt());
+                    main.deletePerson(general.nextInt());
                     general.nextLine();
                 }
                 case "UPDATE" -> {
-                    active.listContact();
+                    main.listContact();
                     System.out.println("Which user you want to update? Enter id: ");
-                    for (Person p : active.contact) {
+                    for (Person p : main.contact) {
                         if (p.getId() == general.nextInt()) {
                             general.nextLine();
                             System.out.println("Enter new name: ");
@@ -48,13 +48,13 @@ public class Tester {
                     }
                 }
                 case "CALL" -> {
-                    active.listContact();
+                    main.listContact();
                     System.out.print("Which person you want to call? Enter id: ");
-                    active.callSomeone(general.nextInt());
+                    main.callSomeone(general.nextInt());
                     general.nextLine();
                 }
                 case "QUIT" -> {
-                    System.out.println("Adios " + active);
+                    System.out.println("Adios " + main);
                     run = false;
                 }
                 default -> System.out.println("Enter commands correctly.");

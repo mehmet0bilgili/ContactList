@@ -45,11 +45,7 @@ public class Person {
     }
 
     public void addPerson(Person p) {
-        if (!this.contact.contains(p)) {
-            this.contact.add(p);
-        } else {
-            System.out.println("You are already add this, " + p.getName() + "/" + p.getTelNumber() + ", person.");
-        }
+        this.contact.add(p);
     }
 
     public void deletePerson(int id) {
