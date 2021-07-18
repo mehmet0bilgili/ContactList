@@ -4,7 +4,7 @@ public class Tester {
 
     public static void main(String[] args) {
 
-        Person main = new Person(1,"Mehmet", "Bilgili", "123456");
+        Person main = new Person(1,"Richard", "Feynman", "123456");
         int id = 2;
 
         Scanner general = new Scanner(System.in);
