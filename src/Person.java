@@ -32,6 +32,18 @@ public class Person {
         return id;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public void setTelNumber(String telNumber) {
+        this.telNumber = telNumber;
+    }
+
     public void addPerson(Person p) {
         if (!this.contact.contains(p)) {
             this.contact.add(p);
@@ -68,7 +80,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return this.getName() + "-" + this.getSurname() + "-" +this.getTelNumber();
+        return "id: " + this.getId() + " -> " + this.getName() + "-" + this.getSurname() + "-" + this.getTelNumber();
     }
 
 }
