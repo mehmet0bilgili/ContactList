@@ -2,11 +2,11 @@ import java.util.ArrayList;
 
 public class Person {
 
-    int id;
-    String name;
-    String surname;
-    String telNumber;
-    ArrayList<Person> contact;
+    private final int id;
+    private String name;
+    private String surname;
+    private String telNumber;
+    protected ArrayList<Person> contact;
 
     public Person(int id, String name, String surname, String telNumber) {
         this.id = id;
