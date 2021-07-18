@@ -37,11 +37,11 @@ public class Tester {
                     for (Person p : main.contact) {
                         if (p.getId() == general.nextInt()) {
                             general.nextLine();
-                            System.out.println("Enter new name: ");
+                            System.out.print("Enter new name: ");
                             p.setName(general.nextLine());
-                            System.out.println("Enter new surname");
+                            System.out.print("Enter new surname: ");
                             p.setSurname(general.nextLine());
-                            System.out.println("Enter new telephone number: ");
+                            System.out.print("Enter new telephone number: ");
                             p.setTelNumber(general.nextLine());
                             break;
                         }
